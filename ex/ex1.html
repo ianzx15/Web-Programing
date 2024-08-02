@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function teste(){
+            var num = document.getElementById("txtNumeros").value;
+            num = num.split(",");
+
+            for (i = 0; i < num.length; i++){
+                quadrado = parseInt(num[i]) * parseInt(num[i])
+                document.write("O quadrado de " + num[i] + " é: " + quadrado)
+            }
+        }
+    </script>
+</head>
+<body>
+    Entrada: <input type="text" id="txtNumeros">
+    <input type="button" value="calcular" onclick="teste()">
+</body>
+</html>
