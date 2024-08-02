@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script>
+      function calcular() {
+        const input = document.getElementById("numbers").value;
+        const valores = input.split(",").map(Number);
+        const positivos = valores.filter((v) => v > 0).length;
+        const negativos = valores.filter((v) => v < 0).length;
+        const total = valores.length;
+        const soma = valores.reduce((acc, val) => acc + val, 0);
+        const media = total > 0 ? soma / total : 0;
+        const percentualPositivos =
+          total > 0 ? ((positivos / total) * 100).toFixed(2) : 0;
+        const percentualNegativos =
+          total > 0 ? ((negativos / total) * 100).toFixed(2) : 0;
+
+        document.getElementById("resultado").innerHTML = `
+            Média Aritmética: ${media.toFixed(2)}
+            Quantidade de Valores Positivos: ${positivos}<div>
+            Quantidade de Valores Negativos: ${negativos}<div>
+            Percentual de Valores Positivos: ${percentualPositivos}%<div>
+            Percentual de Valores Negativos: ${percentualNegativos}%<div>
+            `;
+      }
+    </script>
+    <label for="numbers">Insira os valores:</label>
+    <input type="text" id="numbers" />
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+  </body>
+</html>

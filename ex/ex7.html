@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function func1() {
+        const numeros = document.getElementById("numeros").value.split(",");
+        let soma = 0;
+        for (let i = 0; i < numeros.length; i++) {
+          const num = parseInt(numeros[i].trim(), 10);
+          if (!isNaN(num) && num % 3 === 0 && num % 2 !== 0) {
+            soma += num;
+          }
+        }
+
+        document.getElementById("resultado").textContent = "Soma: " + soma;
+      }
+    </script>
+  </head>
+  <body>
+     Insira os valores <input type="text" id="numeros" />
+    <button onclick="func1()">Calcular Soma</button>
+    <p id="resultado"></p>
+  </body>
+</html>

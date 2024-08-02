@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         function teste(){
-            nums = document.getElementById("numsList").value;
-            listNums = nums.split(",")
-            n1 = listNums[0]
+            const nums = document.getElementById("numsList").value;
+            const listNums = nums.split(",")
+            const n1 = listNums[0]
             for ( i = 0; i <= listNums.length -1; i++){
                 if (n1 < listNums[i + 1]){
                     n1 = listNums[i + 1]

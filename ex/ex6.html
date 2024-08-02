@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function func1() {
+        let input = document.getElementById("input").value;
+        let numberList = input.split(",").map(Number);
+        numberList.sort((a, b) => a - b);
+        document.getElementById("result").textContent = numberList.join(", ");
+      }
+    </script>
+  </head>
+  <body>
+    Insira os valores <input type="text" id="input" />
+    <button onclick="func1()">Ordenar</button>
+    <p id="result"></p>
+  </body>
+</html>
